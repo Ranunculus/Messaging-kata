@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: "002_create_table_message"
+      author: "tatiana.malyutina"
+      changes:
+          - createTable:
+              tableName: message
+              columns:
+                  - column:
+                      constraints:
+                        primaryKey: true
+                        primaryKeyName: messagePK
+                        nullable: false
+                      name: id
+                      type: UUID
+                  - column:
+                      constraints:
+                        nullable: false
+                      name: body
+                      type: VARCHAR(255)
+                  - column:
+                      constraints:
+                        nullable: false
+                      name: sender_id
+                      type: UUID
+                  - column:
+                      constraints:
+                        nullable: false
+                      name: recipient_id
+                      type: UUID
+          - addForeignKeyConstraint:
+              baseColumnNames: sender_id
+              baseTableName: message
+              baseTableSchemaName: public
+              constraintName: fk_sender_id
+              onDelete: NO ACTION
+              referencedColumnNames: id
+              referencedTableName: user
+              referencedTableSchemaName: public
+              validate: true
+          - addForeignKeyConstraint:
+              baseColumnNames: recipient_id
+              baseTableName: message
+              baseTableSchemaName: public
+              constraintName: fk_recipient_id
+              onDelete: NO ACTION
+              referencedColumnNames: id
+              referencedTableName: user
+              referencedTableSchemaName: public
+              validate: true

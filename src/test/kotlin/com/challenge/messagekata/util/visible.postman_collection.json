@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "4ecdea4e-474f-4f4f-acb5-74741e9f2c45",
+		"name": "visible",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12767505"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Authorization",
+						"value": "9752fdf2-bd62-4494-a773-0f7a98fdbadd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"serialNumber\":  \"AfdsfsdfSDFDSf45rf_342__3242=34\",\n    \"model\" : \"Lightweight\",\n    \"weightLimit\" : 100,\n    \"batteryCharge\" : 100\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/user/create?name=Tania",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"create"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Tania"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Authorization",
+						"value": "9752fdf2-bd62-4494-a773-0f7a98fdbadd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/message/send",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Recieved",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Authorization",
+						"value": "b2dcdd96-1ee3-4865-913b-2739d89a75ef",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/message/find/received",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message",
+						"find",
+						"received"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Recieved by Sender",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Authorization",
+						"value": "2ee817b6-3dc9-4ac4-a2db-ee84b3e909b1",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/message/find/received?senderId=a1bd6484-0053-4371-9a28-cf67ea2de8f3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message",
+						"find",
+						"received"
+					],
+					"query": [
+						{
+							"key": "senderId",
+							"value": "a1bd6484-0053-4371-9a28-cf67ea2de8f3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Sent",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-Authorization",
+						"value": "a1bd6484-0053-4371-9a28-cf67ea2de8f3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/message/find/received",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message",
+						"find",
+						"received"
+					],
+					"query": [
+						{
+							"key": "senderId",
+							"value": "a1bd6484-0053-4371-9a28-cf67ea2de8f3",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: "001_create_table_user"
+      author: "tatiana.malyutina"
+      changes:
+          - createTable:
+              tableName: user
+              columns:
+                  - column:
+                      constraints:
+                        primaryKey: true
+                        primaryKeyName: userPK
+                        nullable: false
+                      name: id
+                      type: UUID
+                  - column:
+                      constraints:
+                        nullable: false
+                        unique: true
+                      name: name
+                      type: VARCHAR(255)

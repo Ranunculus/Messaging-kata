@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:13
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: testdb
+      TZ: Europe/Moscow
+    volumes:
+      - postgres-local-volume-message-kata:/var/lib/postgresql/data
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  postgres-local-volume-message-kata:
+    external: true
